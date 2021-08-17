@@ -1,19 +1,5 @@
 function [partial_target] = partial_label_assignment_test(labeled_data, labeled_target, unlabeled_data, k)
 
-% Syntax
-%
-%       [partial_target] = partial_label_assignment(labeled_data, labeled_target, unlabeled_data, k)
-%
-% Description
-%
-%       EUPAL takes,
-%           labeled_data        - A LxD array, the ith instance of labeled instance is stored in labeled_data(i,:)
-%           labeled_target      - A LxQ array, if the jth class label is the ground-truth labels for the ith labeled instance, then labeled_target(i,j) equals +1, otherwise labeled_target(i,j) equals 0
-%           unlabeled_data      - A UxD array, the ith instance of unlabeled instance is stored in unlabeled_data(i,:)
-%           k                   - The number of nearest neighbors used for kNN aggregation (defalut 5)
-%      
-%       and returns,
-%           partial_target           - A UxQ array, if the jth class label is the candidate labels for the ith unlabeled instance, then partial_target(i,j) equals +1, otherwise pl_target(i,j) equals 0
 
 if nargin<4
     k=5;
@@ -25,11 +11,7 @@ if size(labeled_data,1)~=size(labeled_target,1)
     error('Length of label vector does match the number of instances');
 end
 
-% clc;clear;
-% labeled_data = partialData;
-% unlabeled_data = unlabeledData;
-% labeled_target = partialTarget;
-% k=5;
+
 
 gimma = 2;
 L = size(labeled_data,1);
