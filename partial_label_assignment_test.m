@@ -43,7 +43,7 @@ H = sparse(H);
 
 for i = 1:U
     for j = 1:k
-        w(i,j) = H(i,neighbor(i,j));
+        w(i,j) = H(i,neighbor(i,j)); 
         %w(i,j) = exp(-(norm(unlabeled_data(i,:)-labeled_data(neighbor(i,j),:),2)^2)/gimma);
     end
     unlabel_space(i,:) = w(i,:) * labeled_target(neighbor(i,:),:);
